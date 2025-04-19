@@ -6,8 +6,8 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: t3app
+      POSTGRES_PASSWORD: tanasd79
+      POSTGRES_DB: dixa
     volumes:
       - postgres-data:/var/lib/postgresql/data
   api-aggregator:
