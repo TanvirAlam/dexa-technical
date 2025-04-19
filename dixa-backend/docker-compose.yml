@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:15
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: t3app
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  api-aggregator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - GITHUB_TOKEN=ghp_dummyGitHubToken123456789abcdefghijklmno
+      - GITLAB_TOKEN=glpat-dummyGitLabToken123456789abcdefghijklmno
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
