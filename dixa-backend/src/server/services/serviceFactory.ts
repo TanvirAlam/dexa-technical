@@ -1,4 +1,4 @@
-import { ServiceAdapter } from './baseService';
+import type { ServiceAdapter } from './baseService';
 import { GitHubServiceAdapter } from './githubService';
 import { GitLabServiceAdapter } from './gitlabService';
 
